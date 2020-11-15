@@ -5,20 +5,16 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 })
 export class HighlightUserDirective {
 
-  constructor(private elem: ElementRef){}
-
-  // tslint:disable-next-line:typedef
-  @HostListener('click') onClicks(){
-    if (this.elem.nativeElement.style.backgroundColor === 'yellow') {
-      this.elem.nativeElement.style.backgroundColor = 'white';
-    } else{
-      this.elem.nativeElement.style.backgroundColor = 'yellow';
-    }
+  constructor(private elem: ElementRef){
+    this.elem.nativeElement.style.backgroundColor = 'lightblue';
   }
 
-  // tslint:disable-next-line:typedef
-  private textDeco(){
-    this.elem.nativeElement.addClass('bg-warning');
-  }
-
+  // // tslint:disable-next-line:typedef
+  // @HostListener('click') onClicks(){
+  //   if (this.elem.nativeElement.style.backgroundColor === 'lightblue') {
+  //     this.elem.nativeElement.style.backgroundColor = 'white';
+  //   } else{
+  //     this.elem.nativeElement.style.backgroundColor = 'lightblue';
+  //   }
+  // }
 }

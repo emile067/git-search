@@ -1,7 +1,8 @@
-<div class="row">
-  <div class="jumbotron col-md-5 text-center" id="users-div">
+<div class="row text-center">
+  <div class="jumbotron col-md-5" id="users-div">
     <h1 class="display-4">USERS:</h1>
     <form (ngSubmit)="submitUser()">
+      <label for="name">Enter your user name":</label>
       <input
       type="text"
       autocomplete="off"
@@ -16,7 +17,7 @@
         Add user
       </button>
     </form>
-    <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of users; let i=index" appHighlightUser>
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of users; let i=index">
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="{{user.avatar_url}}" class="card-img" alt="..." height="100%">
@@ -33,12 +34,14 @@
     </div>
   </div>
   <div class="col-md-6 box" id="repos-div">
-    <div class="card w-75" *ngFor="let userRepo of userRepos; let i=index">
+
+    <div class="card w-75" style="border: none;" *ngFor="let userRepo of userRepos; let i=index">
       <div class="card-body">
         <h5 class="card-title">{{userRepo.name}}</h5>
         <p class="card-text">{{userRepo.description}}</p>
         <a href="{{userRepo.svn_url}}" target="_blank" class="btn btn-primary">Go to repository</a>
       </div>
+      <hr class="my-4">
     </div>
   </div>
 </div>
