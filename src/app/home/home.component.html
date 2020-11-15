@@ -6,13 +6,20 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">Find repository</a>
   </p>
 </div>
-<h1>My repositories:</h1>
-<div class="container row">
+<div class="container row text-center">
   <div class="col-md-6">
     <img src="{{homeUser.avatar_url}}" alt="" height="300px">
     <h5 class="card-title">User name: {{homeUser.login}}</h5>
     <p class="card-text">Bio: {{homeUser.bio}}<br>Number if repositories: {{homeUser.public_repos}}</p>
     <small>last updated on {{homeUser.updated_at|date}}</small>
   </div>
-  <div class="col-md-6"></div>
+  <div class="col-md-6">
+    <div class="card w-75" *ngFor="let homeRepo of homeRepos; let i=index">
+      <div class="card-body">
+        <h5 class="card-title">{{homeRepo.name}}</h5>
+        <p class="card-text">{{homeRepo.description}}</p>
+        <a href="{{homeRepo.url}}" class="btn btn-primary">Go to repository</a>
+      </div>
+    </div>
+  </div>
 </div>
