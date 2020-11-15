@@ -3,7 +3,7 @@
   <p class="lead">Welcome to GitSearch. The app that helps you get through your github repostiories easily.<br> click here to get your repositories
   </p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Find repository</a>
+    <a class="btn btn-primary btn-lg" [routerLink]="[ '/search' ]" role="button">Find repository</a>
   </p>
 </div>
 <div class="container row text-center">
@@ -18,7 +18,7 @@
       <div class="card-body">
         <h5 class="card-title">{{homeRepo.name}}</h5>
         <p class="card-text">{{homeRepo.description}}</p>
-        <a href="{{homeRepo.url}}" class="btn btn-primary">Go to repository</a>
+        <a href="{{homeRepo.svn_url}}" target="_blank" class="btn btn-primary">Go to repository</a>
       </div>
     </div>
   </div>
