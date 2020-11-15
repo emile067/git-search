@@ -33,6 +33,18 @@
     </div>
   </div>
   <div class="container col-md-6">
-
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let userRepo of userRepos; let i=index" appHighlightUser>
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="" class="card-img" alt="..." height="100%">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{userRepo.name}}</h5>
+            <p class="card-text">{{userRepo.url}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
