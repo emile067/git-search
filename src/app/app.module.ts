@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HighlightUserDirective } from './highlight-user.directive';
 import { DateCountPipe } from './date-count.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     HighlightUserDirective,
-    DateCountPipe
+    DateCountPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
