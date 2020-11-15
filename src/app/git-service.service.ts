@@ -10,5 +10,6 @@ export class GitServiceService {
   getUserInfo(name){
     return this.http.get(`https://api.github.com/users/${name}`);
   }
+
   constructor(private http: HttpClient) { }
 }
