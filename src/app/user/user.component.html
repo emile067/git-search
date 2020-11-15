@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-5 text-center">
+  <div class="jumbotron col-md-5 text-center" id="users-div">
     <h1 class="display-4">USERS:</h1>
     <form (ngSubmit)="submitUser()">
       <input
@@ -25,7 +25,7 @@
           <div class="card-body">
             <h5 class="card-title">User name: {{user.login}}</h5>
             <p class="card-text">Bio: {{user.bio}}<br>Number if repositories: {{user.public_repos}}</p>
-            <small>last updated: {{user.updated_at|dateCount}} days ago</small>
+            <small>last updated: {{user.updated_at|dateCount}}</small>
             <button type="button" class="btn btn-secondary" (click)="getRepos(i)">get repositories</button>
           </div>
         </div>

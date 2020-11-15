@@ -1,0 +1,8 @@
+#users-div{
+  position: fixed;
+  max-width: 40%;
+}
+#repos-div{
+  position: absolute;
+  left: 40%;
+}
