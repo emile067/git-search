@@ -13,7 +13,7 @@ export class GitServiceService {
   }
   // tslint:disable-next-line:typedef
   getUserRepos(name){
-    return this.http.get("https://api.github.com/users/"+ name +"/repos?access_token="+environment.apiKey);
+    return this.http.get('https://api.github.com/users/' + name + '/repos?access_token=' + environment.apiKey);
   }
   constructor(private http: HttpClient) { }
 }

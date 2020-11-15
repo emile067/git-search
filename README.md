@@ -8,7 +8,7 @@ The app is mainly for displaying repositories owned by the user name entered and
 * access to a browser
 * fork from {https://github.com/emile067/.git}
 ## Known Bugs
-No known bugs.
+Images not showing on live site
 ## Technologies Used
 * HTML
 * CSS
