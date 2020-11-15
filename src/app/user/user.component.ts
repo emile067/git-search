@@ -1,5 +1,7 @@
+import { GitUsers } from './../git-users';
+import { GitUserInfo } from './../git-user-info';
+import { GitRepositories } from './../git-repositories';
 import { Component, OnInit } from '@angular/core';
-import { GitUsers } from '../git-users';
 import { GitServiceService } from '../git-service.service';
 
 
@@ -11,25 +13,25 @@ import { GitServiceService } from '../git-service.service';
 export class UserComponent implements OnInit {
   users: any = [];
   newUser: GitUsers;
+  userRepos: GitRepositories;
   userName: string;
 
   constructor(private userService: GitServiceService) { }
   // tslint:disable-next-line:typedef
   submitUser() {
     this.userService.getUserInfo(this.userName).subscribe(users => {
-      this.newUser.info = users;
-      console.log(JSON.stringify(this.newUser));
-      this.users.push(this.newUser);
-    });
-    this.userService.getUserRepos(this.userName).subscribe(repos => {
-      this.newUser.repos = repos;
+      this.newUser = users;
       console.log(JSON.stringify(this.newUser));
       this.users.push(this.newUser);
     });
   }
   // tslint:disable-next-line:typedef
   getRepos(index){
-
+    this.userService.getUserRepos(this.users[index].login).subscribe(repos => {
+      this.userRepos = repos;
+      console.log(JSON.stringify(this.userRepos));
+      // this.users.push(this.userRepos);
+    });
   }
   ngOnInit(): void {
   }
