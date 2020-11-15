@@ -1,10 +1,10 @@
-import { Directive } from '@angular/core';
+import { Directive, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightUser]'
 })
 export class HighlightUserDirective {
 
-  constructor() { }
+  constructor(private elem: ElementRef){}
 
 }

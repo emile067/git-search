@@ -17,10 +17,19 @@ export class UserComponent implements OnInit {
   // tslint:disable-next-line:typedef
   submitUser() {
     this.userService.getUserInfo(this.userName).subscribe(users => {
-      this.newUser = users;
+      this.newUser.info = users;
       console.log(JSON.stringify(this.newUser));
       this.users.push(this.newUser);
     });
+    this.userService.getUserRepos(this.userName).subscribe(repos => {
+      this.newUser.repos = repos;
+      console.log(JSON.stringify(this.newUser));
+      this.users.push(this.newUser);
+    });
+  }
+  // tslint:disable-next-line:typedef
+  getRepos(index){
+
   }
   ngOnInit(): void {
   }

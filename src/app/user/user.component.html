@@ -1,6 +1,6 @@
-<div class="container-fluid row">
-  <div class="col-md-6 text-center">
-    <h1>USERS</h1>
+<div class="container row">
+  <div class=" jumbotron col-md-6 text-center">
+    <h1 class="display-4">USERS:</h1>
     <form (ngSubmit)="submitUser()">
       <input
       type="text"
@@ -11,12 +11,12 @@
       [(ngModel)]="userName"
       name="name"
     />
-      display {{userName}}
       <button type="submit" class="btn btn-success btn-block btn-lg">
         Add user
       </button>
     </form>
-    <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of users; let i=index">
+    <hr class="my-4">
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of users; let i=index" appHighlightUser>
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="{{user.avatar_url}}" class="card-img" alt="..." height="100%">
@@ -25,11 +25,13 @@
           <div class="card-body">
             <h5 class="card-title">{{user.login}}</h5>
             <p class="card-text">{{user.bio}}</p>
-            <p class="card-text"><small class="text-muted"></small></p>
+            <button type="button" class="btn btn-secondary" (click)="getRepos(i)">view repositories</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-6"></div>
+  <div class="container col-md-6">
+
+  </div>
 </div>

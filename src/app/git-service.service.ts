@@ -10,6 +10,9 @@ export class GitServiceService {
   getUserInfo(name){
     return this.http.get(`https://api.github.com/users/${name}`);
   }
-
+  // tslint:disable-next-line:typedef
+  getUserRepos(name){
+    return this.http.get(`https://api.github.com/users/${name}/repos`);
+  }
   constructor(private http: HttpClient) { }
 }
