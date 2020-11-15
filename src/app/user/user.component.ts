@@ -1,5 +1,4 @@
 import { GitUsers } from './../git-users';
-import { GitUserInfo } from './../git-user-info';
 import { GitRepositories } from './../git-repositories';
 import { Component, OnInit } from '@angular/core';
 import { GitServiceService } from '../git-service.service';

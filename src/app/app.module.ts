@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HighlightUserDirective } from './highlight-user.directive';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    HighlightUserDirective
+    HighlightUserDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
